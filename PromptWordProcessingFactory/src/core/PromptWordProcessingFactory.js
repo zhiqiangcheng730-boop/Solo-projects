@@ -8,20 +8,20 @@ class PromptWordProcessingFactory {
 
     const ids = Array.isArray(skillIds) ? skillIds : [skillIds];
     if (ids.length === 0) {
-      throw new Error('请至少选择一个 SKILL');
+      throw new Error('请至少选择一个处理策略');
     }
 
     const skills = ids.map((id) => {
       const skill = getSkillById(id);
-      if (!skill) throw new Error(`未找到 SKILL: ${id}`);
+      if (!skill) throw new Error(`未找到处理策略: ${id}`);
       return skill;
     });
 
     const combinedPrompt = skills
-      .map((s, i) => `【步骤${i + 1}】${s.systemPrompt}`)
+      .map((skill, index) => `【步骤 ${index + 1}】\n${skill.systemPrompt}`)
       .join('\n\n---\n\n');
-    const avgTemp = skills.reduce((sum, s) => sum + s.options.temperature, 0) / skills.length;
-    const maxTokens = Math.max(...skills.map((s) => s.options.maxTokens));
+    const avgTemp = skills.reduce((sum, skill) => sum + skill.options.temperature, 0) / skills.length;
+    const maxTokens = Math.max(...skills.map((skill) => skill.options.maxTokens));
 
     const response = await fetch('/api/convert', {
       method: 'POST',
