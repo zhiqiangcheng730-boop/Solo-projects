@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: 'Aptos', 'Segoe UI Variable Text', 'Microsoft YaHei UI', sans-serif;
+  --bg-base: #050816;
+  --bg-secondary: #091128;
+  --panel-bg: linear-gradient(180deg, rgba(14, 22, 48, 0.78), rgba(8, 14, 30, 0.68));
+  --panel-border: rgba(132, 198, 255, 0.16);
+  --panel-shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
+  --text-strong: #f4fbff;
+  --text-soft: rgba(224, 241, 255, 0.76);
+  --text-muted: rgba(162, 194, 225, 0.72);
+  background:
+    radial-gradient(circle at 15% 18%, rgba(107, 241, 255, 0.16), transparent 24%),
+    radial-gradient(circle at 82% 12%, rgba(89, 117, 255, 0.2), transparent 26%),
+    radial-gradient(circle at 50% 100%, rgba(27, 59, 125, 0.38), transparent 42%),
+    linear-gradient(160deg, #030611 0%, #081022 45%, #060914 100%);
+  color: var(--text-strong);
+}
+
+html,
+body,
+#app {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: inherit;
+  background: transparent;
+  color: inherit;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background-image:
+    linear-gradient(rgba(123, 193, 255, 0.085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(123, 193, 255, 0.085) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 82%);
+}
+
+body::after {
+  background:
+    linear-gradient(180deg, rgba(130, 255, 255, 0.05), transparent 16%),
+    radial-gradient(circle at center, transparent 0 60%, rgba(6, 10, 25, 0.5) 100%);
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+textarea {
+  color: inherit;
+}
+
+#app {
+  position: relative;
+  width: min(1360px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 22px 0 42px;
+}
+
+::selection {
+  background: rgba(123, 232, 255, 0.28);
+  color: #ffffff;
+}
+
+@media (max-width: 720px) {
+  #app {
+    width: min(100%, calc(100% - 16px));
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+}

@@ -1,0 +1,81 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+*.so
+*.dll
+*.pyd
+venv/
+.venv/
+env/
+.env
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Node / Svelte / Vite ──
+node_modules/
+dist/
+.svelte-kit/
+.vite/
+*.local
+
+# ── Environment & Config ──
+.env
+.env.*
+!.env.example
+*.secret
+
+# ── Docker ──
+docker-compose.override.yml
+.docker/
+
+# ── IDE & Editors ──
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-*
+.project
+.classpath
+.settings/
+*.tmproj
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ── Logs & Temp ──
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+logs/
+
+# ── Coverage & Test ──
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+coverage.xml
+*.cover
+
+# ── Data ──
+data/
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ── Misc ──
+*.bak
+*.orig
+.direnv/
