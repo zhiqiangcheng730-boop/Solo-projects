@@ -3,7 +3,11 @@
     "allow": [
       "Bash(npm install *)",
       "Bash(npm create *)",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(docker-compose up *)",
+      "Bash(docker-compose ps *)",
+      "Bash(docker-compose -f e:/pr/Solo-projects/zxh-011/docker-compose.yml ps)",
+      "Bash(pip install *)"
     ]
   }
 }
